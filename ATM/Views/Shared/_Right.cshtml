@@ -1,0 +1,48 @@
+﻿<div layout="row" style="height: 100%">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex="50" ng-controller="receiptCtrl">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Receipt Printer</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-title layout="column" layout-align="center center">
+            <div style="white-space: pre-line"><h3>{{ receipt.text }}</h3></div>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="collect()">Collect Receipt</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex ng-controller="cashDepCtrl">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Cash Depositor</span>
+            </md-card-title-text>
+        </md-card-title>
+        <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+            <md-input-container layout="row" style="margin-right: 10px">
+                <label>10 Rands</label>
+                <input type="number" step="1" min="0" max="10000" value="0" ng-model="money.ten">
+            </md-input-container>
+            <md-input-container layout="row" style="margin-left: 10px">
+                <label>20 Rands</label>
+                <input type="number" step="1" min="0" max="10000" value="0" ng-model="money.twenty">
+            </md-input-container>
+        </div>
+        <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+            <md-input-container layout="row" style="margin-right: 10px">
+                <label>50 Rands</label>
+                <input type="number" step="1" min="0" max="10000" value="0" ng-model="money.fifty">
+            </md-input-container>
+            <md-input-container layout="row" style="margin-left: 10px">
+                <label>100 Rands</label>
+                <input type="number" step="1" min="0" max="10000" value="0" ng-model="money.hundred">
+            </md-input-container>
+        </div>
+        <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+            <md-input-container layout="row">
+                <label>200 Rands</label>
+                <input type="number" step="1" min="0" max="10000" value="0" ng-model="money.twohundred">
+            </md-input-container>
+        </div>
+    </md-card>
+</div>

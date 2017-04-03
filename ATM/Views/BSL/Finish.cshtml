@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Finish";
+}
+
+<div layout="column" layout-align="center center">
+    <div layout="column" layout-align="center center">
+        <h2 class="md-title" layout-align="center center">Choose denomination</h2>
+    </div>
+    <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+        <md-button flex="50" class="md-primary md-raised" ng-click="finishDenomination(10)">R10</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="finishDenomination(20)">R20</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="finishDenomination(50)">R50</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="finishDenomination(100)">R100</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="finishDenomination(200)">R200</md-button>
+    </div>
+    <md-input-container>
+        <md-button class="md-raised md-primary" ng-click="finish()" ng-hide="atm.error">Let ATM Choose</md-button>
+        <br><br>
+        <md-button flex="20" class="md-raised md-primary" ng-click="back()">back</md-button>
+        <md-button class="md-accent md-raised md-hue-1" ng-click="cancel()">Cancel</md-button>
+
+    </md-input-container>
+</div>

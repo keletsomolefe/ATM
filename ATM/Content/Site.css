@@ -1,0 +1,8 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.treasure-overlay-spinner-content {
+    height: 100% !important;
+}

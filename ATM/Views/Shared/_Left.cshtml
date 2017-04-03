@@ -1,0 +1,41 @@
+﻿<div layout="column" style="height: 100%">
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex="50">
+        <form ng-submit="insertCard()" ng-controller="cardCtrl">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Card Reader</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card md-theme-watch style="background-color: skyblue; height: 200px">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Card</span>
+                    </md-card-title-text>
+                    <md-input-container>
+
+                        <label>Card Number</label>
+                        <input ng-model="card.number">
+
+                    </md-input-container>
+                </md-card-title>
+            </md-card>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button type="submit" class="md-raised md-primary" id="test">Insert Card</md-button>
+                <md-button ng-click="collectCard()" class="md-raised md-accent">Collect Card</md-button>
+            </md-card-actions>
+        </form>
+    </md-card>
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch flex ng-controller="cashCtrl">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Cash Dispenser</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-title layout="column" layout-align="center center">
+            <div style="white-space: pre-line"><h3>{{ money.amount }}</h3></div>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="collect()">Collect Cash</md-button>
+        </md-card-actions>
+    </md-card>
+</div>

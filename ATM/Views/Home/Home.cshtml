@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = null;
+}
+
+<div layout="column" layout-align="center center">
+    <h1>{{atm.message}}</h1>
+    <h2 class="md-caption">{{atm.submessage}}</h2>
+    <br><br>
+    <md-button class="md-raised md-primary" ng-click="cancel()" ng-show="atm.show">Cancel</md-button>
+</div>

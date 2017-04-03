@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Automated Teller Machine</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-app="my-app" layout="row">
+<div flex="33">
+    @Html.Partial("_Left")
+</div>
+<div flex layout="column">
+    <div flex="55" style="height: 100%" ng-controller="homeCtrl">
+        <treasure-overlay-spinner active='atm.spinner'>
+            <md-content layout="row" flex style="height: 100%">
+                <md-card flex>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Screen(User Interface)</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card md-theme-watch style="background-color: azure; height: 100%" ng-view id="popupContainer">
+                        @RenderBody()
+                    </md-card>
+                </md-card>
+            </md-content>
+        </treasure-overlay-spinner>
+    </div>
+    <div flex>
+        @Html.Partial("_Right")
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/angularjs")
+@RenderSection("scripts", false)
+</body>
+</html>

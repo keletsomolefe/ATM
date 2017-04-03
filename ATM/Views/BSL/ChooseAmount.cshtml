@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Choose Amount";
+}
+
+<div class="md-padding" ng-cloak>
+    <div layout="column" layout-align="center center">
+        <h2 class="md-title" layout-align="center center">Choose Amount</h2>
+    </div>
+    
+    <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+        <md-button flex="50" class="md-primary md-raised" ng-click="selectAmount(20)" ng-disabled=@(ViewBag.Balance >= 20 ? "false" : "true")>R20</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="selectAmount(50)" ng-disabled=@(ViewBag.Balance >= 50 ? "false" : "true")>R50</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="selectAmount(100)" ng-disabled=@(ViewBag.Balance >= 100 ? "false" : "true")>R100</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="selectAmount(500)" ng-disabled=@(ViewBag.Balance >= 500 ? "false" : "true")>R500</md-button>
+        <md-button flex="50" class="md-primary md-raised" ng-click="selectAmount(1000)" ng-disabled=@(ViewBag.Balance >= 1000 ? "false" : "true")>R1000</md-button>
+    </div>
+    <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+        <md-input-container layout="row">
+            <label>Enter Amount</label>
+            <input type="number" ng-model="atm.amountEntered" step="10" min="0" max="10000">
+        </md-input-container>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-align="center">
+        <md-button flex="50" class="md-primary md-raised" ng-click="enterAmount(atm.amountEntered,$event)" ng-pattern="/^\d*$/">Withdraw Entered Amount</md-button>
+        <md-button flex="20" class="md-raised md-primary" ng-click="back()">back</md-button>
+        <md-button flex="20" class="md-raised md-warn" ng-click="cancel()">Cancel</md-button>
+    </div>
+</div>
+
